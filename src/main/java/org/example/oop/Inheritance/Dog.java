@@ -9,8 +9,10 @@ public class Dog extends Animal{
     public void bark(){
         System.out.println("dog barking");
     }
+
+    //Over ridding || Late binding || Dynamic Binding || Related to inheritance || maintain method signature
     public void eat(){
         System.out.println("dog eating");
-    }
+    }//Over ridding
 
 }
