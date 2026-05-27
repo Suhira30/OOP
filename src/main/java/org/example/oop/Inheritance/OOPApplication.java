@@ -1,4 +1,4 @@
-package org.example.oop;
+package org.example.oop.Inheritance;
 public class OOPApplication {
 
     public static void main(String[] args) {

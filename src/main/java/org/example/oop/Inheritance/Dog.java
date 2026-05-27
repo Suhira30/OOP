@@ -1,4 +1,4 @@
-package org.example.oop;
+package org.example.oop.Inheritance;
 
 public class Dog extends Animal{
     String nickname;

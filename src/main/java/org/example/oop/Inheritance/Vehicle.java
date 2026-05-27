@@ -1,4 +1,4 @@
-package org.example.oop;
+package org.example.oop.Inheritance;
 //Explore super()
 public class Vehicle {
 String brand;
