@@ -12,6 +12,10 @@ public class Demo {
         System.out.println(emp.getFirstName());
         System.out.println(emp.getLastName()); // default value will print
 
+        //update
+        emp.setFirstName("joo");
+        System.out.println(emp.getFirstName());
+
         // Method 2: Using constructor set values
         System.out.println("-----------method 2-: Using constructor set values ------------");
         Employee emp2 = new Employee(2,"Suhi","Bala");
