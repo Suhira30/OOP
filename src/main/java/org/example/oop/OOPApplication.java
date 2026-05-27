@@ -2,12 +2,36 @@ package org.example.oop;
 public class OOPApplication {
 
     public static void main(String[] args) {
+        //Inheritance
         Dog dog = new Dog("Puppy","DODO");
         System.out.println("Name of the dog:" +dog.name);
         System.out.println("NickName of the dog:" +dog.nickname);
         dog.bark();
         dog.eat();
         dog.sleep();
+
+        //Super
+        System.out.println("----------------Exploring Super()-------------");
+        Car car = new Car();
+        /*
+        1. constructor not define
+            1. JVM call no arg constructor of Car internally
+                public Car(){
+                super(); // child no arg constructor always having super() -> super() call parent's no arg constructor
+                }
+         2. Define No Arg constructor in child
+            public Car() {
+            // this no arg constructor internally call super() -> this super() call no arg constructor of parent
+            }
+         3. Add parameterized constructor to parent
+            we have to create the NO arg constructor (if we are going to deal anything without parameter ,otherwise-> Compile error)
+
+         4. explicitly we can call super
+            Super("Honda")
+         */
+        System.out.println("Car color:"+car.color+ " Car model: "+car.model);
+        System.out.println("Car brand:"+car.brand+ " Car speed: "+car.speed);
+        car.honk();
     }
 
 }
