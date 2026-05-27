@@ -42,6 +42,26 @@ public class OOPApplication {
         System.out.println("Car color:" + car.color + " Car model: " + car.model);
         System.out.println("Car brand:" + car.brand + " Car speed: " + car.speed);
         car.honk();
+
+
+        //--------------------Exploring static and final inheritance and over-ride property-----------------
+
+        Vehicle vehicle = new Vehicle();
+        Car car2 = new Car();
+        Vehicle  vehicle2 = new Car();
+
+        //signal: check inheritance -> static inherited but can not be overridden
+        System.out.println(" ");
+        vehicle.signal();
+        car2.signal();
+        vehicle2.signal();
+
+        //sound : final --> final inherited but can not be overridden
+        System.out.println(" ");
+        vehicle.sound();
+        car2.sound();
+        vehicle2.sound();
+
     }
 
 }
