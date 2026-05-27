@@ -2,16 +2,26 @@ package org.example.oop;
 public class OOPApplication {
 
     public static void main(String[] args) {
-        //Inheritance
-        Dog dog = new Dog("Puppy","DODO");
-        System.out.println("Name of the dog:" +dog.name);
-        System.out.println("NickName of the dog:" +dog.nickname);
+        //Inheritance : Dog dog = new Dog("Puppy","DODO");
+        Dog dog = new Dog("Puppy", "DODO");
+        System.out.println("Name of the dog:" + dog.name);
+        System.out.println("NickName of the dog:" + dog.nickname);
         dog.bark();
         dog.eat();
         dog.sleep();
 
+        //Inheritance :Animal d = new Dog("John", "Jo");  ==>>> Upcasting
+        System.out.println("----------------Exploring Reference type object creation-------------");
+        Animal d = new Dog("John", "Jo");
+        System.out.println("Name of the dog:" + d.name);
+        //System.out.println("NickName of the dog:" + d.nickname);
+        // d.bark();//Compilation error
+        d.eat();
+        d.sleep();
+
+
         //Super
-        System.out.println("----------------Exploring Super()-------------");
+        System.out.println("------------------------Exploring Super()------------------------");
         Car car = new Car();
         /*
         1. constructor not define
@@ -29,8 +39,8 @@ public class OOPApplication {
          4. explicitly we can call super
             Super("Honda")
          */
-        System.out.println("Car color:"+car.color+ " Car model: "+car.model);
-        System.out.println("Car brand:"+car.brand+ " Car speed: "+car.speed);
+        System.out.println("Car color:" + car.color + " Car model: " + car.model);
+        System.out.println("Car brand:" + car.brand + " Car speed: " + car.speed);
         car.honk();
     }
 
@@ -122,4 +132,52 @@ IN JVM:
     1.3 Move to parent Animal
     1.4 sleep() found
     1.5 Execute Animal.sleep()
+ */
+
+//----------------------------------------------------------------------------------------------------------------------------------
+/*
+ //Inheritance : Animal d = new Dog("Puppy","DODO");  ==>>> Upcasting
+        System.out.println("----------------Exploring Reference type object creation-------------");
+        Animal d = new Dog("John", "Jo");
+        System.out.println("Name of the dog:" + d.name);
+        //System.out.println("NickName of the dog:" + d.nickname);
+        // d.bark();//Compilation error
+        d.eat();
+        d.sleep();
+
+1. Class Loading
+2. methods , constructor added to METHOD AREA
+3. object creation
+    Animal d = new Dog("John", "Jo");
+    1.1 Heap allocation
+        Dog object in heap:
+        ---------------------
+        name = null
+        nickName = null
+        ---------------------
+    1.2 constructor calling
+         1.2.1 super()
+         1.2.2 further Dog constructor
+    1.3 reference d (Animal type) added in stack
+
+4. d.bark()
+    Metadata checking :
+        Animal has no bark() //Compilation error *******
+5. dog.eat()
+      Step 1 — compiler check
+        reference type = Animal
+        so looks in Animal class
+        eat() exists ✔
+      Step 2 — runtime dispatch
+        JVM checks actual object type: Object = Dog
+        Dog.eat()
+        output : dog eat
+6. dog.run()
+    Step 1 — compile time:
+        Animal has run() ✔
+    Step 2 — runtime:
+        Dog does NOT override run()
+        Animal.run()
+        output: run
+
  */
